@@ -1,0 +1,18 @@
+keys:
+  - &users:
+    - &stepii 1CF624DC518E0BF24858564E2C352F90B4C35A85
+  - &hosts:
+    - &desktop age1q6ufxuce45g74hmjds0pwcmn94qjp4rpu83any03vgj30a009s2qhp4s5g
+creation_rules:
+  - path_regex: hosts/desktop/secrets.yaml
+    key_groups:
+    - age:
+      - *desktop
+      pgp:
+      - *stepii
+  - path_regex: hosts/common/secrets.yaml
+    key_groups:
+    - age:
+      - *desktop
+      pgp:
+      - *stepii

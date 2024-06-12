@@ -1,0 +1,46 @@
+[user]
+	email = stepanstepan0000@gmail.com
+	signingkey = A1EF4E497A6512CF!
+	name = Stepan Klymonchuk
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	br = branch
+	hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
+	type = cat-file -t
+	dump = cat-file -p
+[gui]
+	fontui = -family \"DejaVu Sans\" -size 10 -weight normal -slant roman -underline 0 -overstrike 0
+	recentrepo = /cygdrive/d/Work/URV/2N/COMPUS/comp_33
+[help]
+	autocorrect = 1
+[core]
+	safecrlf = true
+	eol = lf
+	whitespace = trailing-space,indent-with-non-tab,-tab-in-indent
+	fileMode = false
+	symlinks = true
+	editor = vim
+	autocrlf = input
+[apply]
+	whitespace = nowarn
+
+[credential]
+  helper =
+[gc]
+	autoDetach = false
+[pull]
+	rebase = true
+[gpg]
+	program = gpg
+[commit]
+	gpgsign = true
+[color]
+	ui = auto
+	branch = true
+	diff = true
+	interactive = true
+	status = true
+[tag]
+	forceSignAnnotated = true
