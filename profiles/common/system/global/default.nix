@@ -76,6 +76,9 @@
     sops
   ];
 
+  # Set hostname
+  networking.hostName = systemSettings.hostname;
+
   modules.system.security.ssh.enable = true;
   modules.system.security.ssh.authorizedKeys = [
     (builtins.readFile ../../../../users/${userSettings.username}/ssh.pub)
