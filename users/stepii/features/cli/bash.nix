@@ -5,9 +5,13 @@
   ...
 }:
 
+let
+  shellAliases = import ./aliases.nix;
+in
 {
   programs.bash = {
     enable = true;
+    shellAliases = shellAliases;
   };
 
   home.packages = with pkgs; [

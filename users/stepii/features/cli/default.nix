@@ -8,5 +8,11 @@
     ./zsh.nix
   ];
 
-  home.packages = with pkgs; [ nixd ];
+  home.packages = with pkgs; [
+    nixd
+    lsd
+    bat
+    trash-cli
+    neovim
+  ];
 }
