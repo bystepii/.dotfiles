@@ -26,7 +26,7 @@
       systemSettings = {
         system = "x86_64-linux";
         # host is the name of the machine (see hosts/ directory)
-        host = "desktop";
+        host = "qemu";
         # profile is the name of the configuration (see profiles/ directory)
         profile = "default";
         # hostname is the actual hostname that will be set
