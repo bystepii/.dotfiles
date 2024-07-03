@@ -17,6 +17,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nixpkgs-stable.follows = "nixpkgs";
     };
+    hyprland = {
+      type = "git";
+      url = "https://github.com/hyprwm/Hyprland";
+      submodules = true;
+    };
+    hyprland.inputs.nixpkgs.follows = "nixpkgs";
+    hyprland-plugins.url = "github:hyprwm/hyprland-plugins";
+    hyprland-plugins.inputs.hyprland.follows = "hyprland";
   };
 
   outputs =

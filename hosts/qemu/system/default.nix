@@ -13,6 +13,7 @@
     inputs.disko.nixosModules.disko
     ./disko.nix
     { _module.args.disk = "/dev/vda"; }
+    
   ];
 
   # Bootloader.

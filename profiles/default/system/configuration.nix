@@ -18,18 +18,17 @@
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
-  # Enable the X11 windowing system.
-  services.xserver.enable = true;
-
-  # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
+  # Enable printing support.
+  modules.system.printing.enable = true;
 
   # Enable sound.
   modules.system.pipewire.enable = true;
+
+  # Enable Hyprland window manager.
+  modules.system.wm.hyprland.enable = true;
+  
+  # Enable the greetd login manager.
+  modules.system.desktop.greetd.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;

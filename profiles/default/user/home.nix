@@ -1,12 +1,16 @@
 {
   config,
   pkgs,
+  systemSettings,
   userSettings,
   ...
 }:
 
 {
-  imports = [ ../../common/user/global ];
+  imports = [
+    ../../common/user/global
+    ../../../users/${userSettings.username}/features/desktop/wm/hyprland.nix
+  ];
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
@@ -26,6 +30,13 @@
   #
   home.sessionVariables = {
     # EDITOR = "emacs";
+  };
+
+  modules.user.wm.hyprland.settings = {
+    # Set the Hyprland window manager settings here.
+    input = {
+      kb_layout = systemSettings.keyboardLayout;
+    };
   };
 
 }
