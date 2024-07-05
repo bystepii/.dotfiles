@@ -39,4 +39,7 @@
     };
   };
 
+  # Enable the waybar status bar.
+  modules.user.wm.waybar.enable = true;
+
 }
