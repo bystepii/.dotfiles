@@ -32,12 +32,7 @@
     # EDITOR = "emacs";
   };
 
-  modules.user.wm.hyprland.settings = {
-    # Set the Hyprland window manager settings here.
-    input = {
-      kb_layout = systemSettings.keyboardLayout;
-    };
-  };
+  modules.user.wm.hyprland.keyboardLayout = systemSettings.keyboardLayout;
 
   # Enable the waybar status bar.
   modules.user.wm.waybar.enable = true;
