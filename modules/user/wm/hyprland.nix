@@ -166,6 +166,86 @@ in
           };
         };
 
+        # https://wiki.hyprland.org/Configuring/Variables/#gestures
+        gestures = {
+          workspace_swipe = false;
+        };
+
+        # Example per-device config
+        # See https://wiki.hyprland.org/Configuring/Keywords/#per-device-input-configs for more
+        # device = {
+        # name = "epic-mouse-v1";
+        # sensitivity = -0.5;
+        # };
+
+        ####################
+        ### KEYBINDINGSS ###
+        ####################
+
+        # See https://wiki.hyprland.org/Configuring/Keywords/
+        # $mainMod = "SUPER"; # Sets "Windows" key as main modifier
+
+        # Example binds, see https://wiki.hyprland.org/Configuring/Binds/ for more
+        bind =
+          let
+            mainMod = "SUPER";
+            terminal = "kitty";
+            fileManager = "";
+            menu = "";
+          in
+          [
+            "${mainMod}, Q, exec, ${terminal}"
+            "${mainMod}, C, killactive,"
+            "${mainMod}, M, exit,"
+            "${mainMod}, E, exec, ${fileManager}"
+            "${mainMod}, V, togglefloating,"
+            "${mainMod}, R, exec, ${menu}"
+            "${mainMod}, P, pseudo, # dwindle"
+            "${mainMod}, J, togglesplit, # dwindle"
+
+            # Move focus with mainMod + arrow keys
+            "${mainMod}, left, movefocus, l"
+            "${mainMod}, right, movefocus, r"
+            "${mainMod}, up, movefocus, u"
+            "${mainMod}, down, movefocus, d"
+
+            # Switch workspaces with mainMod + [0-9]
+            "${mainMod}, 1, workspace, 1"
+            "${mainMod}, 2, workspace, 2"
+            "${mainMod}, 3, workspace, 3"
+            "${mainMod}, 4, workspace, 4"
+            "${mainMod}, 5, workspace, 5"
+            "${mainMod}, 6, workspace, 6"
+            "${mainMod}, 7, workspace, 7"
+            "${mainMod}, 8, workspace, 8"
+            "${mainMod}, 9, workspace, 9"
+            "${mainMod}, 0, workspace, 10"
+
+            # Move active window to a workspace with mainMod + SHIFT + [0-9]
+            "${mainMod} SHIFT, 1, movetoworkspace, 1"
+            "${mainMod} SHIFT, 2, movetoworkspace, 2"
+            "${mainMod} SHIFT, 3, movetoworkspace, 3"
+            "${mainMod} SHIFT, 4, movetoworkspace, 4"
+            "${mainMod} SHIFT, 5, movetoworkspace, 5"
+            "${mainMod} SHIFT, 6, movetoworkspace, 6"
+            "${mainMod} SHIFT, 7, movetoworkspace, 7"
+            "${mainMod} SHIFT, 8, movetoworkspace, 8"
+            "${mainMod} SHIFT, 9, movetoworkspace, 9"
+            "${mainMod} SHIFT, 0, movetoworkspace, 10"
+
+            # Example special workspace (scratchpad)
+            "${mainMod}, S, togglespecialworkspace, magic"
+            "${mainMod} SHIFT, S, movetoworkspace, special:magic"
+
+            # Scroll through existing workspaces with mainMod + scroll
+            "${mainMod}, mouse_down, workspace, e+1"
+            "${mainMod}, mouse_up, workspace, e-1"
+
+            # Move/resize windows with mainMod + LMB/RMB and dragging
+            "${mainMod}, mouse:272, movewindow"
+            # "${mainMod}, mouse:273, resizewindow"
+          ];
+
         ################
         ### MONITORS ###
         ################
@@ -198,6 +278,21 @@ in
                 "disable"
             }"
           ) (config.modules.user.wm.monitors));
+
+        ##############################
+        ### WINDOWS AND WORKSPACES ###
+        ##############################
+
+        # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
+        # See https://wiki.hyprland.org/Configuring/Workspace-Rules/ for workspace rules
+
+        # Example windowrule v1
+        # windowrule = float, ^(kitty)$
+
+        # Example windowrule v2
+        # windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
+
+        # windowrulev2 = suppressevent maximize, class:.* # You'll probably like this.
 
         workspace = map (m: "name:${m.workspace},monitor:${m.name}") (
           lib.filter (m: m.enabled && m.workspace != null) config.modules.user.wm.monitors

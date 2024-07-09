@@ -37,4 +37,5 @@
   # Enable the waybar status bar.
   modules.user.wm.waybar.enable = true;
 
+  home.packages = with pkgs; [ kitty ];
 }
