@@ -6,7 +6,7 @@ nix-shell -p git --command "git clone https://github.com/bystepii/.dotfiles.git"
 cd .dotfiles
 
 # create disk
-sudo nix run --extra-experimental-features "nix-command flakes" "github:nix-community/disko" -- --mode zap_create_mount hosts/host/system/disko.nix
+sudo nix run --extra-experimental-features "nix-command flakes" "github:nix-community/disko" -- --mode disko hosts/host/system/disko.nix --arg device '"/dev/sdX"'
 
 # install nixos
 sudo nix-shell -p git --command "nixos-install --no-root-passwd --flake .#hostname"
