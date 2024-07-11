@@ -12,7 +12,7 @@
     ./hardware-configuration.nix
     inputs.disko.nixosModules.disko
     ./disko.nix
-    { _module.args.disk = "/dev/vda"; }
+    { _module.args.device = "/dev/vda"; }
     
   ];
 
