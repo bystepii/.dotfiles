@@ -7,6 +7,9 @@
 
 let
   cfg = config.modules.system.desktop.greetd;
+  homeCfgs = config.home-manager.users;
+  homeSharePaths = lib.mapAttrsToList (_: v: "${v.home.path}/share") homeCfgs;
+  vars = ''XDG_DATA_DIRS="$XDG_DATA_DIRS:${lib.concatStringsSep ":" homeSharePaths}" GTK_USE_PORTAL=0'';
 
   sway-kiosk =
     command:
@@ -16,7 +19,7 @@ let
       input "type:touchpad" {
         tap enabled
       }
-      exec '${command}; ${pkgs.sway}/bin/swaymsg exit'
+      exec '${vars} ${command}; ${pkgs.sway}/bin/swaymsg exit'
     ''}";
 in
 {
