@@ -39,5 +39,10 @@ in
         };
       };
     };
+    users.extraUsers.greeter = {
+      # For caching and such
+      home = "/tmp/greeter-home";
+      createHome = true;
+    };
   };
 }
