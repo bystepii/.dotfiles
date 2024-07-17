@@ -10,7 +10,7 @@
   imports = [ ../../common/system/global ];
 
   # Enable impermanence
-  # modules.system.impermanence.enable = true;
+  modules.system.impermanence.enable = true;
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
