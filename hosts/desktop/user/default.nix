@@ -9,10 +9,11 @@
 {
   modules.user.wm.monitors = [
     {
-      name = "eDP-1";
+      name = "DP-1";
       primary = true;
-      width = 1920;
-      height = 1080;
+      width = 2560;
+      height = 1440;
+      refreshRate = 165;
       workspace = "1";
     }
   ];
