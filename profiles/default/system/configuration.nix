@@ -26,9 +26,12 @@
 
   # Enable Hyprland window manager.
   modules.system.wm.hyprland.enable = true;
-  
+
   # Enable the greetd login manager.
-  modules.system.desktop.greetd.enable = true;
+  # modules.system.desktop.greetd.enable = true;
+
+  # Enable the SDDM login manager.
+  modules.system.desktop.sddm.enable = true;
 
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;

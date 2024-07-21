@@ -54,6 +54,7 @@
         email = "stepanstepan0000@gmail.com";
         dotfilesDir = "~/.dotfiles";
         shell = pkgs.zsh;
+        wm = "hyprland";
       };
       pkgs = (
         if systemSettings.unstable then
