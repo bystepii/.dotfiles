@@ -7,10 +7,17 @@
 }:
 
 {
-  modules.user.wm.hyprland.extraConfig = ''
-    env = WLR_RENDERER_ALLOW_SOFTWARE,1
-    env = WLR_NO_HARDWARE_CURSORS,1
-  '';
+  modules.user.wm.hyprland = {
+    # settings = {
+    #   cursor = {
+    #     no_hardware_cursors = true;
+    #   };
+    # };
+    extraConfig = ''
+      env = WLR_RENDERER_ALLOW_SOFTWARE,1
+      env = WLR_NO_HARDWARE_CURSORS,1 # deprecated
+    '';
+  };
   # Doesn't work
   # home.sessionVariables = {
   #   WLR_RENDERER_ALLOW_SOFTWARE = 1;
