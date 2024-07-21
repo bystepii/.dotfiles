@@ -5,4 +5,5 @@
   print = import ./print.nix;
   wm = import ./wm;
   desktop = import ./desktop;
+  nvidia = import ./nvidia.nix;
 }
