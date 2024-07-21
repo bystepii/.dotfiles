@@ -28,6 +28,7 @@
     users.${userSettings.username} = import ../../../${systemSettings.profile}/user/home.nix;
   };
 
+  nix.package = pkgs.nixVersions.latest;
   nix.settings.experimental-features = [ "nix-command flakes" ];
 
   # This value determines the NixOS release from which the default
