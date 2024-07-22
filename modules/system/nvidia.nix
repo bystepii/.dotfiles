@@ -19,16 +19,16 @@ in
 
   config = lib.mkIf cfg.enable {
     services.xserver.videoDrivers = [ "nvidia" ];
-    hardware.opengl = {
+    hardware.graphics = {
       enable = true;
-      driSupport = true;
-      driSupport32Bit = true;
+      enable32Bit = true;
     };
     hardware.nvidia = {
       modesetting.enable = true;
       powerManagement.enable = true;
       open = false;
       nvidiaSettings = true;
+      prime.offload.enable = false;
     };
   };
 }
