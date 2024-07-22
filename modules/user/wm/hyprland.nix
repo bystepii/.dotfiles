@@ -267,6 +267,7 @@ in
               };
           in
           [
+            # TODO: figure out how to fix this
             # ",addreserved,${toString waybarSpace.top},${toString waybarSpace.bottom},${toString waybarSpace.left},${toString waybarSpace.right}"
           ]
           ++ (map (
