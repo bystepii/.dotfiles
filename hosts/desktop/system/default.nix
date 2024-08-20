@@ -23,6 +23,9 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.timeout = 1;
 
+  # Enable systemd stage 1
+  boot.initrd.systemd.enable = true;
+
   # Enable nvidia drivers
   modules.system.nvidia.enable = true;
 }
