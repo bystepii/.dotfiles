@@ -9,7 +9,7 @@
 {
   imports = [
     ../../common/user/global
-    ../../../users/${userSettings.username}/features/desktop/wm/hyprland.nix
+    ../../../users/${userSettings.username}/features/desktop
   ];
 
   # Home Manager can also manage your environment variables through

@@ -10,6 +10,7 @@
     ./hyprland.nix
     ./waybar.nix
     ./monitors.nix
+    ./fonts.nix
   ];
 
   config.modules.user.wm.hyprland = lib.mkIf (userSettings.wm == "hyprland") { enable = true; };
