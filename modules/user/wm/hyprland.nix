@@ -191,7 +191,7 @@ in
             mainMod = "SUPER";
             terminal = "kitty";
             fileManager = "";
-            menu = "";
+            menu = "wofi -S drun";
           in
           [
             "${mainMod}, Q, exec, ${terminal}"

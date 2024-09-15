@@ -10,6 +10,7 @@
     ./hyprland.nix
     ./waybar.nix
     ./monitors.nix
+    ./wofi.nix
     ./fonts.nix
   ];
 
